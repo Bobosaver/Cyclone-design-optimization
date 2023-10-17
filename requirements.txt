@@ -3,9 +3,6 @@ pandas
 numpy
 opencv-python
 matplotlib
-scipy.optimize
+scipy
 openpyxl
 copy
-scipy.interpolate
-mpl_toolkits.mplot3d
-scipy.interpolate
