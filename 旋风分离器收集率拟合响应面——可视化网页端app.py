@@ -213,8 +213,7 @@ st.sidebar.write("<h1 style='color: blue;'>目前具有以下功能：</h2>", un
 st.sidebar.write("<h2 style='color: red;'>1.响应面拟合(风速/粒径—收集率）</h2>", unsafe_allow_html=True)
 st.sidebar.write("<h2 style='color: red;'>2.粒径—收集率曲线拟合(基于双R曲线的高精度拟合）</h2>", unsafe_allow_html=True)
 st.sidebar.write("<h2 style='color: red;'>3.收集效率计算</h2>", unsafe_allow_html=True)
-img = mpimg.imread(r'Cyclone_Seperator_big2.jpg')
-st.sidebar.image(img,caption='旋风分离器优化设计')
+
 
 if choose_func == 1:
     spline_interpolation()
