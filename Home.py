@@ -1,7 +1,8 @@
 import streamlit as st
+from PIL import Image
 
 #放置合肥水泥院LOGO
-logo = mpimg.imread(r'Sinoma ico.png')
+logo = Image(r'Sinoma ico.png')
 st.image(logo,caption='')
 
     
