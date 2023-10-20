@@ -8,7 +8,8 @@ st.write("<span style='font-size: 18px;color: #191970;'>3.现有Bug的优化</sp
 
 img = mpimg.imread(r'./pages/images/OK.jpg')
 st.image(img,caption='')
-st.write("<span style='font-size: 18px;color: #191970;'>如果您有任何意见或是使用的困扰，不妨致电或者是微信联系我。</span>", unsafe_allow_html=True)
-st.write("<span style='font-size: 20px;color: green;'>微信：</span>","<span style='font-size: 20px;color: green;'>ytf2810192</span>",unsafe_allow_html=True)
+st.write("<span style='font-size: 20px;color: #191970;'>如果您有任何意见或是使用的困扰，不妨致电或者是微信联系我。</span>", unsafe_allow_html=True)
+st.write("<span style='font-size: 19px;color: green;'>微信：</span>","<span style='font-size: 18px;color: black;'>ytf2810192</span>",unsafe_allow_html=True)
+st.write("<span style='font-size: 19px;color: green;'>电话：</span>","<span style='font-size: 18px;color: black;'>17756262359</span>",unsafe_allow_html=True)
 
 
