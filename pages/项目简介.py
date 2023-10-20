@@ -10,6 +10,8 @@ st.write("<h5 style='color: red;'>2.粒径—收集率曲线拟合(基于双R曲
 st.write("<h5 style='color: red;'>3.总收集效率计算</h5>", unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns(3)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+st.write(current_dir)
 with col1:
     img1 = mpimg.imread(r'cyclone_Seperator_big2.jpg')
     st.image(img1,caption='压降与流场')
