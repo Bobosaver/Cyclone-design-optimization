@@ -14,7 +14,9 @@ col1, col2, col3 = st.columns(3)
 current_dir = os.path.dirname(os.path.abspath(__file__))
 st.write(current_dir)
 with col1:
-    img1 = mpimg.imread(r'cyclone_Seperator_big2.jpg')
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(current_dir,'Cyclone_Seperator_big2.jpg')
+    img1 = mpimg.imread(file_path)
     st.image(img1,caption='压降与流场')
 
 with col2:
