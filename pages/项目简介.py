@@ -12,10 +12,7 @@ st.write("<h5 style='color: red;'>3.总收集效率计算</h5>", unsafe_allow_ht
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(current_dir,'Cyclone_Seperator_big2.jpg')
-    st.write(file_path)
-    img1 = mpimg.imread(file_path)
+    img1 = mpimg.imread(r'Cyclone_Seperator_big2.jpg')
     st.image(img1,caption='压降与流场')
 
 with col2:
