@@ -13,7 +13,6 @@ col1, col2, col3 = st.columns(3)
 with col1:
     img1 = mpimg.imread(r'Cyclone_Seperator_big2.jpg')
     st.image(img1,caption='压降与流场')
-    st.write('压降与流场')
 
 with col2:
     img2 = mpimg.imread(r'收集率拟合曲线.jpg')
