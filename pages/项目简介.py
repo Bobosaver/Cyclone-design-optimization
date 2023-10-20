@@ -14,13 +14,13 @@ col1, col2, col3 = st.columns(3)
 current_dir = os.path.dirname(os.path.abspath(__file__))
 st.write(current_dir)
 with col1:
-    img1 = mpimg.imread('./cyclone_Seperator_big2.jpg')
+    img1 = mpimg.imread(r'cyclone_Seperator_big2.jpg')
     st.image(img1,caption='压降与流场')
 
 with col2:
-    img2 = mpimg.imread('./收集率拟合曲线.jpg')
+    img2 = mpimg.imread(r'收集率拟合曲线.jpg')
     st.image(img2,caption='收集率拟合曲线')
 
 with col3:
-    img3 = mpimg.imread('./响应面拟合.jpg')
+    img3 = mpimg.imread(r'响应面拟合.jpg')
     st.image(img3,caption='拟合响应面')  
