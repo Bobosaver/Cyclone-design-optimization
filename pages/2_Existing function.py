@@ -209,11 +209,6 @@ st.write("<span style='font-size: 20px;color: green;'>4.旋风分离器总收集
 
 choose_func = st.number_input("请输入功能代码",1)
 
-st.sidebar.write("<h1 style='color: blue;'>目前具有以下功能：</h2>", unsafe_allow_html=True)
-st.sidebar.write("<h2 style='color: red;'>1.响应面拟合(风速/粒径—收集率）</h2>", unsafe_allow_html=True)
-st.sidebar.write("<h2 style='color: red;'>2.粒径—收集率曲线拟合(基于双R曲线的高精度拟合）</h2>", unsafe_allow_html=True)
-st.sidebar.write("<h2 style='color: red;'>3.收集效率计算</h2>", unsafe_allow_html=True)
-
 if choose_func == 1:
     spline_interpolation()
 elif choose_func == 2:
