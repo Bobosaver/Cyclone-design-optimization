@@ -10,9 +10,7 @@ st.write("<h5 style='color: red;'>1.响应面拟合(风速/粒径—收集率）
 st.write("<h5 style='color: red;'>2.粒径—收集率曲线拟合(基于双R曲线的高精度拟合）</h5>", unsafe_allow_html=True)
 st.write("<h5 style='color: red;'>3.总收集效率计算</h5>", unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns(3)
-current_dir = os.path.dirname(os.path.abspath(__file__))
-st.write(current_dir)
+
 with col1:
     current_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(current_dir,'Cyclone_Seperator_big2.jpg')
