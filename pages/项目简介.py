@@ -1,5 +1,6 @@
 import streamlit as st
-import matplotlib.image as mpimg 
+import matplotlib.image as mpimg
+import os
 
 st.header('本项目简要介绍')
 st.write("<h3 style='color: black;'>这个Web App针对旋风筒结构关键参数及主要边界条件进行参数化仿真</h3>",unsafe_allow_html=True)
