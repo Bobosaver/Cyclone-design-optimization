@@ -31,7 +31,9 @@ if choose_func == op_func[0]:
             img = mpimg.imread(r'./Help/梯度提升算法.jpg')
             st.image(img,caption='')
         if choose_algorithm == op_algorithm[3]:
-            st.write("<p style='color: black; text-indent:2em'>我们基于2参数的77组样本数据进行了三种算法的响应面拟合</p>",unsafe_allow_html=True) 
+            st.write("<p style='color: black; text-indent:2em'>我们基于2参数的77组样本数据进行了三种算法的响应面拟合，在这个\
+            样本量级下，多项式函数插值拟合算法得到的响应面更为平滑、分辨率更高，与验证点间的误差也会更小。如果样本数量进一步提高至\
+            千个以上，基于机器学习的算法则可能具有更高的置信度。</p>",unsafe_allow_html=True) 
             img = mpimg.imread(r'./Help/拟合算法比较.png')
             st.image(img,caption='')
 
