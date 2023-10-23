@@ -12,6 +12,8 @@ from scipy.interpolate import griddata
 matplotlib.rc("font",family='KaiTi')
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.interpolate import interpn
+import warnings
+warings.filterwarning('ignore')
 
 # 功能1:旋风分离器响应面拟合
 def spline_interpolation():
