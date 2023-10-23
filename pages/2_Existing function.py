@@ -222,8 +222,7 @@ elif choose_func == op_func[1]:
     
 elif choose_func == op_func[2]:
     m = st.sidebar.slider("请输入粒径(μm):",1,30,30)
-    a=0
-    b=0
+    collection_curve()
     a,b = collection_curve()
     shoujilv = 1-np.exp(-(m/a)**b)
     st.sidebar.write("<span style='color: red;'>收集率为：</span>", unsafe_allow_html=True)
