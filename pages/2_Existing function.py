@@ -123,7 +123,7 @@ def collection_curve():
     else:
         st.text('还未选择文件！')
 
-def func_3():
+def Tcrc():
     file_1 = st.file_uploader("请选择上传分析拟合文件", type="xlsx")   # 上传文件
     file_2 = st.file_uploader("请选择上传实际颗粒粒径分布数据", type="xlsx")   # 上传文件
 
@@ -225,5 +225,5 @@ elif choose_func == op_func[1]:
     collection_curve()
     
 elif choose_func == op_func[2]:
-    func_3()
+    Tcrc()
 
