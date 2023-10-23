@@ -118,7 +118,8 @@ def collection_curve():
         a = ab[0]
         b = ab[1]
         shoujilv = 1-np.exp(-(m/a)**b)
-        return shoujilv
+        st.sidebar.write("<span style='color: red;'>收集率为：</span>", unsafe_allow_html=True)
+        st.sidebar.write(str(shoujilv))
     else:
         st.text('还未选择文件！')
 
@@ -224,9 +225,7 @@ elif choose_func == op_func[1]:
     collection_curve()
     
 elif choose_func == op_func[2]:
-    keli_shouji = collection_curve()
-    st.sidebar.write("<span style='color: red;'>收集率为：</span>", unsafe_allow_html=True)
-    st.sidebar.write(str(keli_shouji))
+    collection_curve()
     
 elif choose_func == op_func[3]:
     func_3()
