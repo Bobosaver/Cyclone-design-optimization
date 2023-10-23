@@ -16,7 +16,7 @@ with col2:
     st.image(img2,caption='')
 
 with col3:
-    img3 = mpimg.imread(r'./pages/images/HF预热分解炉.jpg')
+    img3 = mpimg.imread(r'./pages/images/HF预热分解炉.png')
     st.image(img3,caption='')  
 
 
