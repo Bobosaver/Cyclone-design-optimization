@@ -214,7 +214,7 @@ if choose_func == op_func[0]:
     旋风分离器包含多个结构设计参数及边界条件，例如筒高及入口风速，对颗粒收集率有不同的影响水平。通过对多参数设计下的颗粒收集率\
     进行算法拟合,可以得到响应面函数，有助于进行进一步设计优化。</p>",unsafe_allow_html=True)
     st.write("<p style='color: black; text-indent:2em; line-height:30px;'>为使用该功能，需要指定一个Excel文件，包含多组\
-    数据样本，具体的数据格式参考help中指南。</p>",unsafe_allow_html=True)
+    数据样本，具体的数据格式参考Help中指南。</p>",unsafe_allow_html=True)
     spline_interpolation()
 elif choose_func == op_func[1]:
     collection_curve()
