@@ -212,7 +212,6 @@ def Tcrc():
         st.sidebar.write("<span style='color: red;'>颗粒总收集率为：</span>", unsafe_allow_html=True)
         st.sidebar.write(str(T_rate))
     
-    
 #主程序功能介绍
 st.title('旋风分离器参数拟合')
 st.header('现有功能')
