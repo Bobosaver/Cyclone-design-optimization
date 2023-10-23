@@ -11,9 +11,17 @@ if choose_func == op_func[0]:
     if choose_ques == op_ques[0]:
         st.write("<p style='color: black; text-indent:2em'>当前主要的响应面拟合算法包括多项式插值算法和基于大\
         数据样本的机器学习算法。本Web app可选择采用三种拟合算法：</p>",unsafe_allow_html=True)
-        op_algorithm = ['三次卷积插值算法','三次样条插值算法','梯度提升算法']
+        op_algorithm = ['三次卷积插值算法','三次样条插值算法','梯度提升算法','算法的选择与比较']
         choose_algorithm = st.radio('您想了解的哪种算法的详细情况？',op_algorithm)
         if choose_algorithm == op_algorithm[0]:
+            img = mpimg.imread(r'./Help/三次卷积插值.png')
+            st.image(img,caption='')
+        if choose_algorithm == op_algorithm[1]:
+            img = mpimg.imread(r'./Help/三次样条插值.png')
+            st.image(img,caption='')
+            
+        
+            
             
             
         
