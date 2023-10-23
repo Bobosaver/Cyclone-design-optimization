@@ -210,7 +210,7 @@ op_func =['旋风分离器响应面拟合','旋风分离器收集率曲线拟合
 choose_func = st.radio('Select three known variables:',op_func)
 
 if choose_func == op_func[0]:
-    st.write("<spna style='color: black; text-align:center'>创新和运营“双元驱动”，“四位一体”生态链，\
+    st.write("<spna style='color: black; text-indent:2em'>创新和运营“双元驱动”，“四位一体”生态链，\
     实现科研——工程——科研互相反哺的良性循环；拥有多个国家、省市级科研平台,多项技术成果被列入国家重大科技\
     成果推广计划。2020年被评为国家技术创新示范企业，2022年在国资委“双百行动”专项考核中被评为标杆企业。</span>",unsafe_allow_html=True)
     spline_interpolation()
