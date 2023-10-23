@@ -202,19 +202,15 @@ def func_3():
 #主程序功能介绍
 st.title('旋风分离器参数拟合')
 st.header('现有功能')
-st.write("<span style='font-size: 20px;color: green;'>1.旋风分离器响应面拟合</span>", unsafe_allow_html=True)
-st.write("<span style='font-size: 20px;color: green;'>2.旋风分离器收集率曲线拟合</span>", unsafe_allow_html=True)
-st.write("<span style='font-size: 20px;color: green;'>3.旋风分离器单一粒径收集效率计算</span>", unsafe_allow_html=True)
-st.write("<span style='font-size: 20px;color: green;'>4.旋风分离器总收集效率计算</span>", unsafe_allow_html=True)
 
 #可选功能
 op_func =['旋风分离器响应面拟合','旋风分离器收集率曲线拟合','旋风分离器单一粒径收集效率计算','旋风分离器总收集效率计算']
 
-    
 #选择执行功能
 choose_func = st.radio('Select three known variables:',op_func)
 
 if choose_func == op_func[0]:
+    
     spline_interpolation()
 elif choose_func == op_func[1]:
     collection_curve()
