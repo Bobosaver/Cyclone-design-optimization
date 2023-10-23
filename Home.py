@@ -41,7 +41,7 @@ with col2:
 with col3:
     img3 = mpimg.imread(r'./pages/images/HP强涡流型多风道煤粉燃烧器.png')
     st.image(img3,caption='') 
-    st.write("<h5 style='color: #00008B; text-align:center'>HP强涡流型多风道煤粉燃烧器</h5>",unsafe_allow_html=True)
+    st.write("<h5 style='color: #00008B; text-align:center'>HP煤粉燃烧器</h5>",unsafe_allow_html=True)
     st.write("<span style='color: black; text-align:center'>高性能的燃烧器是回转窑煅烧水泥熟料的关键设\
     备之一，中建材（合肥）热工装备科技有限公司在消化吸收国外先进技术的基础上，结合我国燃料条件研制开发的HP型\
     多通道燃烧器，是国内唯一通过中国建材联合会鉴定的新一代高性能燃烧器</span>",unsafe_allow_html=True)
