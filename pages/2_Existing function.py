@@ -9,7 +9,6 @@ import numpy as np
 import openpyxl as opxl
 import copy
 from scipy.interpolate import griddata
-matplotlib.rc("font",family='KaiTi')
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.interpolate import interpn
 
