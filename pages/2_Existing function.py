@@ -75,8 +75,9 @@ def spline_interpolation():
         st.text('还未选择文件！')
 
 # 功能2:旋风分离器收集率曲线拟合
-def collection_curve(m):
+def collection_curve():
     file = st.file_uploader("请选择上传文件", type="xlsx")   #上传文件
+    m = st.sidebar.slider("请输入粒径(μm):",1,30,30)
 
     if file is not None:
         data = opxl.load_workbook(file)  # 提取原始数据
@@ -118,7 +119,6 @@ def collection_curve(m):
         b = ab[1]
         shoujilv = 1-np.exp(-(m/a)**b)
         return shoujilv
-    
     else:
         st.text('还未选择文件！')
 
@@ -224,8 +224,7 @@ elif choose_func == op_func[1]:
     collection_curve()
     
 elif choose_func == op_func[2]:
-    m = st.sidebar.slider("请输入粒径(μm):",1,30,30)
-    keli_shouji = collection_curve(m)
+    keli_shouji = collection_curve()
     st.sidebar.write("<span style='color: red;'>收集率为：</span>", unsafe_allow_html=True)
     st.sidebar.write(str(keli_shouji))
     
