@@ -7,7 +7,7 @@ st.image(logo,caption='')
 
 with col1:
     img1 = mpimg.imread(r'./pages/images/合肥水泥院介绍.jpg')
-    st.image(img1)
+    st.image(img1,caption='')
 
 with col2:
     img2 = mpimg.imread(r'./pages/images/HFGG系列辊压机.jpg')
