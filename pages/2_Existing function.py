@@ -201,7 +201,7 @@ def Tcrc():
             R = Density[i]*Collection_rate[i]
             T_rate = T_rate + R
             
-        st.sidebar.write("<span style='color: red;'>收集率为：</span>", unsafe_allow_html=True)
+        st.sidebar.write("<span style='color: red;'>颗粒总收集率为：</span>", unsafe_allow_html=True)
         st.sidebar.write(str(T_rate))
     
     
