@@ -30,7 +30,7 @@ if choose_func == op_func[0]:
             添加到现有模型输入中，并进行反复迭代以改进整体模型预测。</p>",unsafe_allow_html=True) 
             img = mpimg.imread(r'./Help/梯度提升算法.jpg')
             st.image(img,caption='')
-        if choose_algorithm == op_algorithm[3]:
+
             
         
             
