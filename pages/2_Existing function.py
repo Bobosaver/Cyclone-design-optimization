@@ -207,19 +207,25 @@ st.write("<span style='font-size: 20px;color: green;'>2.旋风分离器收集率
 st.write("<span style='font-size: 20px;color: green;'>3.旋风分离器单一粒径收集效率计算</span>", unsafe_allow_html=True)
 st.write("<span style='font-size: 20px;color: green;'>4.旋风分离器总收集效率计算</span>", unsafe_allow_html=True)
 
-choose_func = st.number_input("请输入功能代码",1)
+#可选功能
+op_func =['旋风分离器响应面拟合','旋风分离器收集率曲线拟合','旋风分离器单一粒径收集效率计算','旋风分离器总收集效率计算']
 
-if choose_func == 1:
+    
+#选择执行功能
+choose_func = st.radio('Select three known variables:',op_func)
+
+if choose_func == op_func[0]:
     spline_interpolation()
-elif choose_func == 2:
+elif choose_func == op_func[1]:
     collection_curve()
-elif choose_func == 3:
+elif choose_func == op_func[2]:
+    a=0
+    b=0
     a,b = collection_curve()
     m = st.sidebar.slider("请输入粒径(μm):",1,30,30)
     shoujilv = 1-np.exp(-(m/a)**b)
     st.sidebar.write("<span style='color: red;'>收集率为：</span>", unsafe_allow_html=True)
     st.sidebar.write(str(shoujilv))
-elif choose_func == 4:
+elif choose_func == op_func[3]:
     func_3()
-else:
-    st.write('暂时没写好')
+
