@@ -210,9 +210,11 @@ op_func =['旋风分离器响应面拟合','旋风分离器收集率曲线拟合
 choose_func = st.radio('Select three known variables:',op_func)
 
 if choose_func == op_func[0]:
-    st.write("<span style='color: black; text-indent:2em'>创新和运营“双元驱动”，“四位一体”生态链，\
-    实现科研——工程——科研互相反哺的良性循环；拥有多个国家、省市级科研平台,多项技术成果被列入国家重大科技\
-    成果推广计划。2020年被评为国家技术创新示范企业，2022年在国资委“双百行动”专项考核中被评为标杆企业。</span>",unsafe_allow_html=True)
+    st.write("<p style='color: black; text-indent:2em; line-height:30px;'>该功能为旋风分离器颗粒收集率的的响应面拟合：\
+    旋风分离器包含多个结构设计参数及边界条件，例如筒高及入口风速，对颗粒收集率有不同的影响水平。通过对多参数设计下的颗粒收集率\
+    进行算法拟合,可以得到响应面函数，有助于进行进一步设计优化。</p>",unsafe_allow_html=True)
+    st.write("<p style='color: black; text-indent:2em; line-height:30px;'>为使用该功能，需要指定一个Excel文件，包含多组\
+    数据样本，具体的数据格式参考help中指南。</p>",unsafe_allow_html=True)
     spline_interpolation()
 elif choose_func == op_func[1]:
     collection_curve()
