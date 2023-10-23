@@ -200,8 +200,9 @@ def Tcrc():
         for i in range(len(Collection_rate)):
             R = Density[i]*Collection_rate[i]
             T_rate = T_rate + R
-        st.text('总收集率为：')
-        st.write(T_rate)
+            
+        st.sidebar.write("<span style='color: red;'>收集率为：</span>", unsafe_allow_html=True)
+        st.sidebar.write(str(T_rate))
     
     
 #主程序功能介绍
