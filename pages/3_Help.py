@@ -30,6 +30,12 @@ if choose_func == op_func[0]:
             添加到现有模型输入中，并进行反复迭代以改进整体模型预测。</p>",unsafe_allow_html=True) 
             img = mpimg.imread(r'./Help/梯度提升算法.jpg')
             st.image(img,caption='')
+        if choose_algorithm == op_algorithm[3]:
+            st.write("<p style='color: black; text-indent:2em'>我们基于2参数的77组样本数据进行了三种算法的响应面拟合</p>",unsafe_allow_html=True) 
+            img = mpimg.imread(r'./Help/拟合算法比较.png')
+            st.image(img,caption='')
+
+
 
             
         
