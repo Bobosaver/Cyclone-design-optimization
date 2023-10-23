@@ -239,5 +239,9 @@ elif choose_func == op_func[1]:
     collection_curve()
     
 elif choose_func == op_func[2]:
+    st.write("<p style='color: black; text-indent:2em; line-height:30px;'>该功能为旋风分离器的颗粒总收集率计算：通过功能1\
+    中的拟合响应面，可以预测任意颗粒粒径的收集率，以此实现对设定颗粒粒径分布下的总收集率的计算。</p>",unsafe_allow_html=True)
+    st.write("<p style='color: black; text-indent:2em; line-height:30px;'>为使用该功能，需要指定两个Excel文件，一个样本数\
+    据文件以生成响应面，另一个则给出颗粒粒径分布情况。具体的数据格式参考Help中指南。</p>",unsafe_allow_html=True)
     Tcrc()
 
