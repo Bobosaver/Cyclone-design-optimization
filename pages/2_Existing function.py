@@ -221,7 +221,7 @@ elif choose_func == op_func[1]:
     collection_curve()
     
 elif choose_func == op_func[2]:
-    if collection_curve() != 0：
+    if collection_curve() != 0:
         a,b = collection_curve()
     m = st.sidebar.slider("请输入粒径(μm):",1,30,30)
     shoujilv = 1-np.exp(-(m/a)**b)
