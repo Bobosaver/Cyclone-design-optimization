@@ -211,7 +211,7 @@ st.header('现有功能')
 op_func =['旋风分离器响应面拟合','旋风分离器收集率曲线拟合及收集效率计算','旋风分离器总收集效率计算']
 
 #选择执行功能
-choose_func = st.radio('Select three known variables:',op_func)
+choose_func = st.radio('请选择需要执行的功能',op_func)
 
 if choose_func == op_func[0]:
     st.write("<p style='color: black; text-indent:2em; line-height:30px;'>该功能为旋风分离器颗粒收集率的的响应面拟合：\
