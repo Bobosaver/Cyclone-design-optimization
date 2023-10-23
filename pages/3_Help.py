@@ -3,7 +3,7 @@ import matplotlib.image as mpimg
 
 st.title('帮助')
 #选择参考文档
-op_func =['***旋风分离器响应面拟合***','***旋风分离器收集率曲线拟合及收集效率计算***','***旋风分离器总收集效率计算***']
+op_func =['***旋风分离器响应面拟合***','**旋风分离器收集率曲线拟合及收集效率计算**','***旋风分离器总收集效率计算***']
 choose_func = st.radio('您对以下哪个功能有所疑问？',op_func,index=None)
 
 if choose_func == op_func[0]:
@@ -20,6 +20,10 @@ if choose_func == op_func[0]:
         if choose_algorithm == op_algorithm[1]:
             img = mpimg.imread(r'./Help/三次样条插值.png')
             st.image(img,caption='')
+        if choose_algorithm == op_algorithm[2]:
+            st.write("<p style='color: red; text-indent:2em'>当前主要的响应面拟合算法包括多项式插值算法和基于大\
+            数据样本的机器学习算法。本Web app可选择采用三种拟合算法：</p>",unsafe_allow_html=True)            
+        if choose_algorithm == op_algorithm[3]:
             
         
             
