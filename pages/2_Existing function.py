@@ -216,8 +216,10 @@ if choose_func == op_func[0]:
     st.write("<p style='color: black; text-indent:2em; line-height:30px;'>为使用该功能，需要指定一个Excel文件，包含多组\
     数据样本，具体的数据格式参考Help中指南。</p>",unsafe_allow_html=True)
     spline_interpolation()
+    
 elif choose_func == op_func[1]:
     collection_curve()
+    
 elif choose_func == op_func[2]:
     a=0
     b=0
@@ -226,6 +228,7 @@ elif choose_func == op_func[2]:
     shoujilv = 1-np.exp(-(m/a)**b)
     st.sidebar.write("<span style='color: red;'>收集率为：</span>", unsafe_allow_html=True)
     st.sidebar.write(str(shoujilv))
+    
 elif choose_func == op_func[3]:
     func_3()
 
