@@ -126,7 +126,7 @@ def collection_curve():
 def Tcrc():
     file_1 = st.file_uploader("请选择上传分析拟合文件", type="xlsx")   # 上传文件
     file_2 = st.file_uploader("请选择上传实际颗粒粒径分布数据", type="xlsx")   # 上传文件
-    v = st.sidebar.slider("请指定当前风速(m/s):",1,17,24)
+    v = st.sidebar.slider("请指定当前风速(m/s):",5,17,24)
 
     if file_1 and file_2 is not None:
         data1 = opxl.load_workbook(file_1)  # 读取仿真分析数据
