@@ -123,11 +123,12 @@ def collection_curve():
         a = ab[0]
         b = ab[1]
         shoujilv = 1-np.exp(-(m/a)**b)
-        
-        st.sidebar.write("<span style='color: red;'>收集率为：</span>", unsafe_allow_html=True)
-        st.sidebar.write(str(shoujilv))        
+
         st.sidebar.write("<span style='color: red;'>拟合优度为：</span>", unsafe_allow_html=True)
         st.sidebar.write(str(r_squared))
+        st.sidebar.write("<span style='color: red;'>收集率为：</span>", unsafe_allow_html=True)
+        st.sidebar.write(str(shoujilv))        
+
     else:
         st.text('还未选择文件！')
 
