@@ -102,6 +102,12 @@ def collection_curve():
         def func(x, a, b):   #非线性双R曲线拟合
             return np.exp(-(x/a)**b)
         ab, para = curve_fit(func,y,z)
+        
+        #计算拟合优度
+        mean = np.mean(z)  
+        ss_tot = np.sum((z - mean) ** 2)  
+        ss_res = np.sum((z - func(y, *ab)) ** 2)
+        r_squared = 1 - (ss_res / ss_tot)  
 
         #绘图
         fig = plt.figure()
@@ -118,8 +124,11 @@ def collection_curve():
         a = ab[0]
         b = ab[1]
         shoujilv = 1-np.exp(-(m/a)**b)
+        
         st.sidebar.write("<span style='color: red;'>收集率为：</span>", unsafe_allow_html=True)
-        st.sidebar.write(str(shoujilv))
+        st.sidebar.write(str(shoujilv))        
+        st.sidebar.write("<span style='color: red;'>拟合优度为：</span>", unsafe_allow_html=True)
+        st.sidebar.write(str(r_squared))
     else:
         st.text('还未选择文件！')
 
@@ -216,7 +225,7 @@ op_func =['旋风分离器响应面拟合','旋风分离器收集率曲线拟合
 choose_func = st.radio('请选择需要执行的功能',op_func,index=None)
 
 if choose_func == op_func[0]:
-    st.write("<p style='color: black; text-indent:2em; line-height:30px;'>该功能为旋风分离器颗粒收集率的的响应面拟合：\
+    st.write("<p style='color: black; text-indent:2em; line-height:30px;'>该功能为旋风分离器颗粒收集率的响应面拟合：\
     旋风分离器包含多个结构设计参数及边界条件，例如筒高及入口风速，对颗粒收集率有不同的影响水平。通过对多参数设计下的颗粒收集率\
     进行算法拟合,可以得到响应面函数，有助于进行进一步设计优化。</p>",unsafe_allow_html=True)
     st.write("<p style='color: black; text-indent:2em; line-height:30px;'>为使用该功能，需要指定一个Excel文件，包含多组\
@@ -224,6 +233,11 @@ if choose_func == op_func[0]:
     spline_interpolation()
     
 elif choose_func == op_func[1]:
+    st.write("<p style='color: black; text-indent:2em; line-height:30px;'>该功能为旋风分离器的颗粒收集率曲线的拟合：在\
+    旋风分离器的结构及边界条件确定时，不同粒径下的颗粒收集率呈类双指数函数分布。本功能以Rosin-Rammler曲线为拟合目标曲线，通过\
+    非线性最小二乘法进行拟合，以预测颗粒粒径与收集率间的关系。</p>",unsafe_allow_html=True)
+    st.write("<p style='color: black; text-indent:2em; line-height:30px;'>为使用该功能，需要指定一个Excel文件，包含不同\
+    粒径下的颗粒收集率数据样本，具体的数据格式参考Help中指南。</p>",unsafe_allow_html=True)
     collection_curve()
     
 elif choose_func == op_func[2]:
