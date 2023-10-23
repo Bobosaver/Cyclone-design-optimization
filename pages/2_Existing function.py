@@ -126,6 +126,7 @@ def collection_curve():
 def Tcrc():
     file_1 = st.file_uploader("请选择上传分析拟合文件", type="xlsx")   # 上传文件
     file_2 = st.file_uploader("请选择上传实际颗粒粒径分布数据", type="xlsx")   # 上传文件
+    v = st.sidebar.slider("请指定当前风速(m/s):",1,30,30)
 
     if file_1 and file_2 is not None:
         data1 = opxl.load_workbook(file_1)  # 读取仿真分析数据
@@ -190,7 +191,7 @@ def Tcrc():
                 MK.remove(a)
 
         #拟合各粒径收集率
-        Collection_rate_mid = griddata((x, y), z, (17,MK), method='cubic')
+        Collection_rate_mid = griddata((x, y), z, (v,MK), method='cubic')
         Collection_rate_max = [1 for _ in range(len(max_keli))] 
         Collection_rate = [*Collection_rate_mid,*Collection_rate_max] 
 
