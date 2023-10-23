@@ -5,4 +5,17 @@ import matplotlib.image as mpimg
 logo = mpimg.imread(r'Sinoma_ico.png')
 st.image(logo,caption='')
 
+with col1:
+    img1 = mpimg.imread(r'./pages/images/合肥水泥院介绍.jpg')
+    st.image(img1)
+
+with col2:
+    img2 = mpimg.imread(r'./pages/images/HFGG系列辊压机.jpg')
+    st.image(img2,caption='')
+
+with col3:
+    img3 = mpimg.imread(r'./pages/images/HF预热分解炉.jpg')
+    st.image(img3,caption='')  
+
+
     
