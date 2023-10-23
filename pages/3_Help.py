@@ -23,9 +23,13 @@ if choose_func == op_func[0]:
         if choose_algorithm == op_algorithm[2]:
             st.write('')
             st.write('')
-            st.write("<p style='color: red; text-indent:2em'>梯度提升算法的"提升"指将多个简单模型合并到单个复合模型中的一种方式。\
-            这也是为什么增强被称为累加模型的原因，因为简单模型（也称为弱学习者）一次添加一个，同时保持模型中的现有树不变。随着我们组\
-            合越来越多的简单模型，完整的最终模型成为一个更强大的预测变量。</p>",unsafe_allow_html=True)            
+            st.write("<p style='color: black; text-indent:2em'>梯度提升算法指将多个简单模型合并到单个复合模型中的一种方式。\
+            简单模型（即弱学习模型）一次添加一个，而梯度提升算法则可以在原复合模型上不断累加，持续强化，同时保持模型中的现有树\
+            不变。随模型的不断组合强化，完整的最终模型可以实现更强大的预测能力，能够对连续值进行较好的预测。梯度提升算法将当前预\
+            测和已知正确目标值之间的差值称为残差，并将对残差的提升回归训练为一个弱模型，将变量映射到该残差。弱模型预测的此残差将\
+            添加到现有模型输入中，并进行反复迭代以改进整体模型预测。</p>",unsafe_allow_html=True) 
+            img = mpimg.imread(r'./Help/梯度提升算法.jpg')
+            st.image(img,caption='')
         if choose_algorithm == op_algorithm[3]:
             
         
