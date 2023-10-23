@@ -77,7 +77,7 @@ def spline_interpolation():
 # 功能2:旋风分离器收集率曲线拟合
 def collection_curve():
     file = st.file_uploader("请选择上传文件", type="xlsx")   #上传文件
-    m = st.sidebar.slider("请输入粒径(μm):",1,17,24)
+    m = st.sidebar.slider("请输入粒径(μm):",1,15,30)
 
     if file is not None:
         data = opxl.load_workbook(file)  # 提取原始数据
@@ -126,7 +126,7 @@ def collection_curve():
 def Tcrc():
     file_1 = st.file_uploader("请选择上传分析拟合文件", type="xlsx")   # 上传文件
     file_2 = st.file_uploader("请选择上传实际颗粒粒径分布数据", type="xlsx")   # 上传文件
-    v = st.sidebar.slider("请指定当前风速(m/s):",1,30,30)
+    v = st.sidebar.slider("请指定当前风速(m/s):",1,17,24)
 
     if file_1 and file_2 is not None:
         data1 = opxl.load_workbook(file_1)  # 读取仿真分析数据
