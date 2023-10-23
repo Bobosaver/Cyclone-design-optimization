@@ -20,7 +20,6 @@ def spline_interpolation():
         data = opxl.load_workbook(file)
         table = data['Sheet1']
         max_row = table.max_row
-        st.write(max_row)
 
         columnA = table['A2':'A%d' % max_row]  #提取风速
         Fengsu = []
