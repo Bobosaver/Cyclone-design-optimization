@@ -45,7 +45,7 @@ for index in range(1,100):
 st.write("==================================================================")
 st.write("<h5 style='color: red'>拟合优度已达0.999以上，置信度良好。</h5>",unsafe_allow_html=True)
 
-def get_x_pre(a):
+def get_x_pre(x):
     x_pre = [1]
     x_len = len(x)
     for i in range(x_len):
