@@ -10,7 +10,7 @@ import time
 matplotlib.rc("font",family='KaiTi')
 
 #提取原始数据
-data = pd.DataFrame(pd.read_excel(r"C:\Users\Yin\Desktop\实验设计.xlsx"))
+data = pd.DataFrame(pd.read_excel(r"实验设计.xlsx"))
 data_np = data.to_numpy()
 data_cansu = np.delete(data_np,-1,1)
 lie = len(data_np[:,0])
