@@ -5,5 +5,5 @@ opencv-python
 matplotlib
 scipy
 openpyxl
-sklearn
+scikit-learn
 
