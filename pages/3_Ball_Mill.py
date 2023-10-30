@@ -7,6 +7,8 @@ from sklearn.linear_model import LinearRegression #导入线性回归模块
 from sklearn.preprocessing import PolynomialFeatures
 import copy
 import time
+import re
+from scipy import optimize
 matplotlib.rc("font",family='KaiTi')
 
 #提取原始数据
@@ -22,13 +24,18 @@ for i in range(lie):
     x.append(list(data_lie))
 
 #显示进度条
-word=st.empty()
+my_bar=st.empty()
 bar=st.progress(0)
 for i in range(100):
-    word.text('数据拟合中: '+str(i+1))
+    my_bar.text('数据拟合中: '+str(i+1))
     bar.progress(i+1)
-    time.sleep(0.03)
+    time.sleep(0.01)
+time.sleep(1)
+my_bar.empty()
+
 st.write("==================================================================")
+
+#迭代求拟合多项式系数
 for index in range(1,100):
 	data=pd.DataFrame({'IN':x, 'OUT':y})
 	data_train=np.array(data['IN']).reshape(data['IN'].shape[0],1)				
@@ -73,16 +80,17 @@ def get_y_pre(x , coef):
 boundary = {'密度倍数':[1,5],'球-料恢复系数':[0.1,0.9],'球-球恢复系数':[0.1,0.9],'球-料摩擦系数':[0.1,0.9],'球-球摩擦系数':[0.1,0.9],'模量倍数':[2,10]}
 
 #选择使用功能
-op_func =['能量利用率预测','单一变量拟合曲线','多变量拟合响应面']
+op_func =['能量利用率预测','单一变量拟合曲线','多变量拟合响应面','规划能量利用率最优值']
 choose_func = st.radio('请选择您需要的功能',op_func,index=None)
+op_select = ['密度倍数','球-料恢复系数','球-球恢复系数','球-料摩擦系数','球-球摩擦系数','模量倍数']
 
 if choose_func == op_func[0]:
-    a = st.sidebar.slider("请指定密度倍数:",1,2,5)
-    b = st.sidebar.slider("请指定球-料恢复系数:",0.1,0.4,0.9)
-    c = st.sidebar.slider("请指定球-球恢复系数:",0.1,0.4,0.9)
-    d = st.sidebar.slider("请指定球-料摩擦系数:",0.1,0.4,0.9)
-    e = st.sidebar.slider("请指定球-球摩擦系数:",0.1,0.4,0.9)
-    f = st.sidebar.slider("请指定模量倍数:",2,4,10)
+    a = st.sidebar.slider("请指定密度倍数:",1,5,2)
+    b = st.sidebar.slider("请指定球-料恢复系数:",0.1,0.9,0.4)
+    c = st.sidebar.slider("请指定球-球恢复系数:",0.1,0.9,0.4)
+    d = st.sidebar.slider("请指定球-料摩擦系数:",0.1,0.9,0.4)
+    e = st.sidebar.slider("请指定球-球摩擦系数:",0.1,0.9,0.4)
+    f = st.sidebar.slider("请指定模量倍数:",2,10,4)
     x = [a,b,c,d,e,f]
     coef = regr.coef_.flatten()
     x_pre = get_x_pre(x)
@@ -91,7 +99,6 @@ if choose_func == op_func[0]:
     st.markdown("<p style='color: red;font-size:20px;'>%s</p>"%(y_pre), unsafe_allow_html=True)
 
 elif choose_func == op_func[1]:
-    op_select = ['密度倍数','球-料恢复系数','球-球恢复系数','球-料摩擦系数','球-球摩擦系数','模量倍数']
     choose_select = st.radio('请指定需要绘制拟合曲线的参数',op_select)
     for i in range(len(op_select)):
         if op_select[i]==choose_select:
@@ -128,7 +135,6 @@ elif choose_func == op_func[1]:
     st.pyplot(plt_2D(xi,yi))
 
 elif choose_func == op_func[2]:
-    op_select = ['密度倍数','球-料恢复系数','球-球恢复系数','球-料摩擦系数','球-球摩擦系数','模量倍数']
     options_1 = st.selectbox('请选择拟合响应面的第一个参数',('密度倍数','球-料恢复系数','球-球恢复系数','球-料摩擦系数','球-球摩擦系数','模量倍数'),index=1)
     for i in range(len(op_select)):
         if op_select[i]==options_1:
@@ -165,7 +171,7 @@ elif choose_func == op_func[2]:
             x_pre = get_x_pre(x)
             y_pre = get_y_pre(x_pre, coef)
             zi[i,j]= y_pre
-    
+            
     # 调节图像大小,清晰度
     fig = plt.figure()
     plt.figure(figsize=(10,10),dpi=175)
@@ -179,11 +185,48 @@ elif choose_func == op_func[2]:
     ax.zaxis.set_tick_params(color='r',labelsize=25)
     ax.set_xlabel('%s'%(options_1),size=30,labelpad=20)
     ax.set_ylabel('%s'%(options_2),size=30,labelpad=20)
-    ax.set_zlabel('能量利用率（%）',size=30,labelpad=25)
+    ax.set_zlabel('能量利用率（%）',size=30,labelpad=22)
     ax.view_init(20, -25)
     fig.set_size_inches(12, 15) 
     st.pyplot(fig)
 
+elif choose_func == op_func[3]:
+    flag = st.text_input("请指定一个接近最优解的初始预测值",'[3,0.1,0.5,0.9,0.3,4]')
+    flag = re.findall(r'\[(.*?)\]',flag)
+    flag = flag[0]
+    flag = flag.split(',')
+    for i in range(len(flag)):
+        flag[i] = float(flag[i])
+        
+    #定义最优化函数
+    def func_goal(a):
+        pre = get_x_pre(a)
+        coef = regr.coef_.flatten()
+        y_r = get_y_pre(pre, coef)
+        return -y_r
+    
+    #指定边界条件
+    st.write("<p style='color:#00008B;font-size:20px;'>请指定各参数边界条件</p>", unsafe_allow_html=True)
+    a = st.text_input("请指定密度倍数的范围",'1,5')
+    b = st.text_input("请指定球-球恢复系数的范围",'0.1,0.9')
+    c = st.text_input("请指定球-料恢复系数的范围",'0.1,0.9')
+    d = st.text_input("请指定球-球摩擦系数的范围",'0.1,0.9')
+    e = st.text_input("请指定球-料摩擦系数的范围",'0.1,0.9')
+    f = st.text_input("请指定弹性模量倍数的范围",'2,10')
+    bound_set = [a,b,c,d,e,f]
+    for i in range(len(bound_set)):
+        bound_set[i] = bound_set[i].split(',')
+        for j in range(len(bound_set[i])):
+            bound_set[i][j] = float(bound_set[i][j])
+         
+    #选择最优化方法        
+    Optimization_method =['Nelder-Mead','L-BFGS-B','SLSQP','TNC','Powell','trust-constr']
+    choose_method = st.radio('请选择求解算法',Optimization_method)  
+    result = optimize.minimize(func_goal,flag,bounds=bound_set,method=choose_method)
+    st.write("<span style='color:#00008B;font-size:22px;'>能量利用率最大值为：</span>", "<span style='color: red;font-size:22px;'>%s</span>"%(-result.fun),unsafe_allow_html=True)
+    st.write("<p style='color:#00008B;font-size:22px;'>最大值对应的参数值为：</p>", unsafe_allow_html=True)
+    for i in range(len(op_select)):
+        st.write("<span style='font-size: 18px;color: green;'>%s :</span>"%(op_select[i]),"<span style='font-size: 18px;color: black;'>%s</span>"%round(result.x[i],4),unsafe_allow_html=True)
     
     
     
