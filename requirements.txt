@@ -6,4 +6,4 @@ matplotlib
 scipy
 openpyxl
 scikit-learn
-
+streamlit_extras
