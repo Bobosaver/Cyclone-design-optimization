@@ -17,7 +17,7 @@ add_logo(r'合肥水泥院logo.png',height=60)
 st.write("<h1 style='color: black; text-align:center'>球磨机参数优化</h1>",unsafe_allow_html=True)
 
 #提取原始数据
-data = pd.DataFrame(pd.read_excel(r"C:\Users\Yin\Desktop\实验设计.xlsx"))
+data = pd.DataFrame(pd.read_excel(r"实验设计.xlsx"))
 data_np = data.to_numpy()
 data_cansu = np.delete(data_np,-1,1)
 lie = len(data_np[:,0])
