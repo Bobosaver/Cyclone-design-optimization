@@ -12,7 +12,7 @@ from scipy import optimize
 matplotlib.rc("font",family='KaiTi')
 from streamlit_extras.app_logo import add_logo
 
-add_logo(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main\合肥水泥院logo.png',height=60)
+add_logo(r'合肥水泥院logo.png',height=60)
 
 st.write("<h1 style='color: black; text-align:center'>球磨机参数优化</h1>",unsafe_allow_html=True)
 
