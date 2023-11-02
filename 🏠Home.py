@@ -3,10 +3,10 @@ import matplotlib.image as mpimg
 from streamlit_extras.app_logo import add_logo
 
 #放置合肥水泥院LOGO
-logo = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/Sinoma_ico.png')
+logo = mpimg.imread(r'Sinoma_ico.png')
 st.image(logo,caption='')
 
-add_logo(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main\合肥水泥院logo.png',height=60)
+add_logo(r'合肥水泥院logo.png',height=60)
 
 st.write("")
 st.write("")
@@ -24,7 +24,7 @@ st.write("")
 #一些装备的介绍
 col1, col2, col3 = st.columns(3)
 with col1:
-    img1 = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/pages/images/合肥水泥院介绍.jpg')
+    img1 = mpimg.imread(r'./pages/images/合肥水泥院介绍.jpg')
     st.image(img1,caption='')
     st.write("<p style='color: #00008B; text-align:center;font-weight:bold;font-size:20px'>公司平台</p>",unsafe_allow_html=True)
     st.write("<span style='color: black; text-align:center'>创新和运营“双元驱动”，“四位一体”生态链，\
@@ -33,7 +33,7 @@ with col1:
 
 
 with col2:
-    img2 = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/pages/images/HFGG系列辊压机.jpg')
+    img2 = mpimg.imread(r'./pages/images/HFGG系列辊压机.jpg')
     st.image(img2,caption='')
     st.write("<p style='color: #00008B; text-align:center;font-weight:bold;font-size:20px'>HFGG系列高性能辊压机</p>",unsafe_allow_html=True)
     st.write("<span style='color: black; text-align:center'>HFCG系列辊压机是我国拥有自主知识产权的水\
@@ -42,7 +42,7 @@ with col2:
     指标达到国际先进水平。</span>",unsafe_allow_html=True)
 
 with col3:
-    img3 = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/pages/images/HP强涡流型多风道煤粉燃烧器.png')
+    img3 = mpimg.imread(r'./pages/images/HP强涡流型多风道煤粉燃烧器.png')
     st.image(img3,caption='') 
     st.write("<p style='color: #00008B; text-align:center;font-weight:bold;font-size:20px'>HP煤粉燃烧器</p>",unsafe_allow_html=True)
     st.write("<span style='color: black; text-align:center'>高性能的燃烧器是回转窑煅烧水泥熟料的关键设\
