@@ -2,7 +2,7 @@ import streamlit as st
 import matplotlib.image as mpimg
 from streamlit_extras.app_logo import add_logo
 
-add_logo(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main\合肥水泥院logo.png',height=60)
+add_logo(r'合肥水泥院logo.png',height=60)
 st.title('帮助')
 op_main = [':violet[理论与算法简析]',':green[使用指南]']
 choose_main = st.radio('您想了解哪部分内容？',op_main,index=None)
@@ -14,20 +14,20 @@ if choose_main == op_main[0]:
         op_algorithm = ['***三次卷积插值算法***','***三次样条插值算法***','***多元多项式拟合算法***','***梯度提升算法***','***算法的选择与比较***']
         choose_algorithm = st.radio('您想了解哪种算法的详细情况？',op_algorithm,index=None)
         if choose_algorithm == op_algorithm[0]:
-            img = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/Help/三次卷积插值.png')
+            img = mpimg.imread(r'./Help/三次卷积插值.png')
             st.image(img,caption='')
             st.link_button('进一步了解'+':orange[三次卷积插值算法]','https://www.cnblogs.com/Pyrokine/p/15174298.html',use_container_width=True)
         if choose_algorithm == op_algorithm[1]:
-            img = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/Help/三次样条插值.png')
+            img = mpimg.imread(r'./Help/三次样条插值.png')
             st.image(img,caption='')
             st.link_button('进一步了解'+':orange[三次样条插值算法]','https://www.cnblogs.com/Pyrokine/p/15174298.html',use_container_width=True)
         if choose_algorithm == op_algorithm[2]:
             st.write("<p style='color: black; text-indent:2em'>在python—sklearn库中，对于多元多项式的的拟合仍然基于线性最小二\
             乘法原理，但是对数据进行了多项式特征构建和标准化处理。多项式特征构建通过增加自变量的次数，将数据映射到高维空间，实\
             现非线性数据转化为线性，以便使用核函数在低维空间中计算。</p>",unsafe_allow_html=True)
-            img = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/Help/非线性多项式回归1.png')
+            img = mpimg.imread(r'./Help/非线性多项式回归1.png')
             st.image(img,caption='')
-            img = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/Help/非线性多项式回归2.png')
+            img = mpimg.imread(r'./Help/非线性多项式回归2.png')
             st.image(img,caption='')
             st.link_button('进一步了解'+':orange[多项式拟合算法]','https://blog.csdn.net/HHG20171226/article/details/102749751',use_container_width=True)
         if choose_algorithm == op_algorithm[3]:
@@ -38,14 +38,14 @@ if choose_main == op_main[0]:
             不变。随模型的不断组合强化，完整的最终模型可以实现更强大的预测能力，能够对连续值进行较好的预测。梯度提升算法将当前预\
             测和已知正确目标值之间的差值称为残差，并将对残差的提升回归训练为一个弱模型，将变量映射到该残差。弱模型预测的此残差将\
             添加到现有模型输入中，并进行反复迭代以改进整体模型预测。</p>",unsafe_allow_html=True) 
-            img = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/Help/梯度提升算法.jpg')
+            img = mpimg.imread(r'./Help/梯度提升算法.jpg')
             st.image(img,caption='')
             st.link_button('进一步了解'+':orange[梯度提升算法]','https://blog.csdn.net/weixin_39910711/article/details/124450141',use_container_width=True)
         if choose_algorithm == op_algorithm[4]:
             st.write("<p style='color: black; text-indent:2em'>我们基于2参数的77组样本数据进行了三种算法的响应面拟合，在这个\
             样本量级下，多项式函数插值拟合算法得到的响应面更为平滑、分辨率更高，与验证点间的误差也会更小。如果样本数量进一步提高至\
             千个以上，基于机器学习的算法则可能具有更高的置信度。</p>",unsafe_allow_html=True) 
-            img = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/Help/拟合算法比较.png')
+            img = mpimg.imread(r'./Help/拟合算法比较.png')
             st.image(img,caption='')
         
     if choose_ques == op_ques[1]:
@@ -57,7 +57,7 @@ if choose_main == op_main[0]:
         st.write("<p style='color: black; text-indent:2em'>下面以旋风分离器为例，展示了基于其Fluent模型进行的ROM降阶模型搭建过程。\
                 由于当前Ansys内置的ROM功能仍不完善，针对颗粒收集率等关键指标尚不能实现降阶，因此该部分指标采用Python进行数据的后处\
                 理，采用响应面拟合功能进行关键指标的预测。</p>",unsafe_allow_html=True)
-        img = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/Help/旋风分离器ROM降阶模型的搭建.jpg')
+        img = mpimg.imread(r'./Help/旋风分离器ROM降阶模型的搭建.jpg')
         st.image(img,caption='')
         st.link_button('视频教程：'+':blue[如何生成ROM降阶模型]','https://www.ansys.com/zh-cn/blog/how-to-build-reduced-order-model-cfd-simulations',use_container_width=True)
         st.link_button('进一步了解'+':orange[ROM降阶模型]','https://zhuanlan.zhihu.com/p/566332825',use_container_width=True)
@@ -70,7 +70,7 @@ if choose_main == op_main[0]:
             jac=None, hess=None, hessp=None, bounds=None, constraints=(), 
             tol=None, callback=None, options=None)'''
         st.code(code,language='python')
-        img = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/Help/scipy.optimize.minimize函数用法.png')
+        img = mpimg.imread(r'./Help/scipy.optimize.minimize函数用法.png')
         st.image(img,caption='')
         st.link_button('进一步了解'+':orange[scipy.minimize]'+'函数库','https://zhuanlan.zhihu.com/p/566332825',use_container_width=True)
 
