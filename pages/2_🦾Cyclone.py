@@ -215,8 +215,7 @@ def Tcrc():
         st.sidebar.write(str(T_rate))
     
 #主程序功能介绍
-st.title('旋风分离器参数拟合')
-st.header('现有功能')
+st.write("<p style='color: black; text-align:center;font-weight:bold;font-size:35px'>旋风分离器参数拟合</p>",unsafe_allow_html=True)
 
 #可选功能
 op_func =['旋风分离器响应面拟合','旋风分离器收集率曲线拟合及收集效率计算','旋风分离器总收集效率计算']
