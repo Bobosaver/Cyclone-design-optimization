@@ -13,13 +13,13 @@ st.write("<p style='color: red;'>3.总收集效率计算</p>", unsafe_allow_html
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    img1 = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/pages/images/Cyclone_Seperator_big2.jpg')
+    img1 = mpimg.imread(r'./pages/images/Cyclone_Seperator_big2.jpg')
     st.image(img1,caption='压降与流场')
 
 with col2:
-    img2 = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/pages/images/收集率拟合曲线.jpg')
+    img2 = mpimg.imread(r'./pages/images/收集率拟合曲线.jpg')
     st.image(img2,caption='收集率拟合曲线')
 
 with col3:
-    img3 = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main/pages/images/响应面拟合.jpg')
+    img3 = mpimg.imread(r'./pages/images/响应面拟合.jpg')
     st.image(img3,caption='拟合响应面')  
