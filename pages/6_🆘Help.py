@@ -3,7 +3,7 @@ import matplotlib.image as mpimg
 from streamlit_extras.app_logo import add_logo
 
 add_logo(r'合肥水泥院logo.png',height=60)
-st.title('帮助')
+st.write("<p style='color: black; text-align:center;font-weight:bold;font-size:35px'>帮助</p>",unsafe_allow_html=True)
 op_main = [':violet[理论与算法简析]',':green[使用指南]']
 choose_main = st.radio('您想了解哪部分内容？',op_main,index=None)
 
