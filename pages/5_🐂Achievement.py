@@ -3,7 +3,8 @@ import matplotlib.image as mpimg
 from streamlit_extras.app_logo import add_logo
        
 add_logo(r'合肥水泥院logo.png',height=60)
-st.write("<h1 style='color: black; text-align:center'>仿真中心现有成果</h1>",unsafe_allow_html=True)
+
+st.write("<p style='color: black; text-align:center;font-weight:bold;font-size:35px'>仿真中心现有成果</p>",unsafe_allow_html=True)
 
 #现有的成果
 outcome = ['柱钉造型优化','V型选粉机造型优化','辊压机优化']
