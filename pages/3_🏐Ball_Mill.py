@@ -14,7 +14,7 @@ from streamlit_extras.app_logo import add_logo
 
 add_logo(r'合肥水泥院logo.png',height=60)
 
-st.write("<h1 style='color: black; text-align:center'>球磨机参数优化</h1>",unsafe_allow_html=True)
+st.write("<p style='color: black; text-align:center;font-weight:bold;font-size:35px'>球磨机参数优化</p>",unsafe_allow_html=True)
 
 #提取原始数据
 data = pd.DataFrame(pd.read_excel(r"实验设计.xlsx"))
