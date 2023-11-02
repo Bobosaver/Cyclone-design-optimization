@@ -3,7 +3,7 @@ import matplotlib.image as mpimg
 from streamlit_extras.app_logo import add_logo
 
 add_logo(r'合肥水泥院logo.png',height=60)
-st.title('联系我们')
+
 st.write("<p style='color: black; text-align:center;font-weight:bold;font-size:35px'>联系我们</p>",unsafe_allow_html=True)
 st.write("<span style='font-size: 20px;color: Black;'>这是一个刚刚开始搭建的Web app，页面和功能都很简陋，因此更需要您的宝贵意见：</span>", unsafe_allow_html=True)
 st.write("<span style='font-size: 18px;color: #191970;'>1.希望加入的功能</span>", unsafe_allow_html=True)
