@@ -13,7 +13,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from scipy.interpolate import interpn
 from streamlit_extras.app_logo import add_logo
 
-add_logo(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main\合肥水泥院logo.png',height=60)
+add_logo(r'合肥水泥院logo.png',height=60)
 # 功能1:旋风分离器响应面拟合
 def spline_interpolation():
     file = st.file_uploader("请选择上传文件", type="xlsx")   #上传文件
