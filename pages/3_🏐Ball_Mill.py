@@ -10,7 +10,7 @@ import time
 import re
 from scipy import optimize
 from matplotlib.font_manager import FontProperties
-font = FontProperties(fname='./Simkai.ttf',size=30)
+font = FontProperties(fname='./simkai.ttf',size=30)
 from streamlit_extras.app_logo import add_logo
 matplotlib.rcParams['axes.unicode_minus'] =False
 
