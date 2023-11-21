@@ -24,10 +24,10 @@ with p1_col3:
 st.write("<p style='color: black; text-align:center;font-weight:bold;font-size:25px'>球磨机参数拟合与优化</p>",unsafe_allow_html=True)
 p3_col1, p3_col2= st.columns(2)
 with p3_col1:
-    p3_img1 = mpimg.imread(r'.\pages\images\球磨机单变量预测.png')
+    p3_img1 = mpimg.imread(r'./pages/images/球磨机单变量预测.png')
     st.image(p3_img1,caption='球磨机单参数拟合曲线')
 with p3_col2:
-    p3_img2 = mpimg.imread(r'.\pages\images\球磨机多变量拟合面.png')
+    p3_img2 = mpimg.imread(r'./pages/images/球磨机多变量拟合面.png')
     st.image(p3_img2,caption='球磨机多参数拟合曲面')
 
 st.write("<p style='color: black; text-align:center;font-weight:bold;font-size:25px'>分解炉参数拟合与优化</p>",unsafe_allow_html=True)
@@ -36,5 +36,5 @@ with p3_col1:
     p3_img1 = mpimg.imread(r'./pages/images/分解炉温度.png')
     st.image(p3_img1,caption='分解炉出口温度')
 with p3_col2:
-    p3_img2 = mpimg.imread(r'.\pages\images\氮氧化物排放率.png')
+    p3_img2 = mpimg.imread(r'./pages/images/氮氧化物排放率.png')
     st.image(p3_img2,caption='氮氧化物排放率',use_column_width=True)
