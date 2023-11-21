@@ -9,8 +9,10 @@ import copy
 import time
 import re
 from scipy import optimize
-matplotlib.rc("font",family='KaiTi')
+from matplotlib.font_manager import FontProperties
+font = FontProperties(fname='./Simkai.ttf',size=30)
 from streamlit_extras.app_logo import add_logo
+matplotlib.rcParams['axes.unicode_minus'] =False
 
 add_logo(r'合肥水泥院logo.png',height=60)
 
@@ -133,8 +135,8 @@ elif choose_func == op_func[1]:
         plt.plot(xi, yi, lw=2)
         plt.yticks(fontsize=30,color='#000000')
         plt.xticks(fontsize=30,color='#000000')
-        plt.xlabel('%s'%(choose_select),fontsize=35)
-        plt.ylabel('能量利用率(%)',fontsize=35)
+        plt.xlabel('%s'%(choose_select),fontproperties=font)
+        plt.ylabel('能量利用率(%)',fontproperties=font)
         fig = plt.gcf()
         fig.set_size_inches(20, 12) # 设置图像大小
         return fig
@@ -192,9 +194,9 @@ elif choose_func == op_func[2]:
     ax.xaxis.set_tick_params(color='r',labelsize=25)
     ax.yaxis.set_tick_params(color='r',labelsize=25)
     ax.zaxis.set_tick_params(color='r',labelsize=25)
-    ax.set_xlabel('%s'%(options_1),size=30,labelpad=20)
-    ax.set_ylabel('%s'%(options_2),size=30,labelpad=20)
-    ax.set_zlabel('能量利用率（%）',size=30,labelpad=22)
+    ax.set_xlabel('%s'%(options_1),fontproperties=font,labelpad=20)
+    ax.set_ylabel('%s'%(options_2),fontproperties=font,labelpad=20)
+    ax.set_zlabel('能量利用率（%）',fontproperties=font,labelpad=22)
     ax.view_init(20, -25)
     fig.set_size_inches(12, 15) 
     st.pyplot(fig)
