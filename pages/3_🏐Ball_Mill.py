@@ -13,6 +13,7 @@ from matplotlib.font_manager import FontProperties
 font = FontProperties(fname='./simkai.ttf',size=30)
 from streamlit_extras.app_logo import add_logo
 import base64
+import matplotlib.image as mpimg
 matplotlib.rcParams['axes.unicode_minus'] =False
 
 add_logo(r'合肥水泥院logo.png',height=60)
