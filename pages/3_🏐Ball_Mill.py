@@ -104,8 +104,38 @@ if choose_func == op_func[0]:
     coef = regr.coef_.flatten()
     x_pre = get_x_pre(x)
     y_pre = get_y_pre(x_pre,coef)
-    st.write("<p style='color:#00008B;font-size:20px;'>能量利用率预测值为：</p>", unsafe_allow_html=True)
-    st.markdown("<p style='color: red;font-size:20px;'>%s</p>"%(y_pre), unsafe_allow_html=True)
+    file_gif = open(r'.\pages\Ball_mill_images\球磨机2.gif','rb')
+    contents = file_gif.read()
+    data_url = base64.b64encode(contents).decode("utf-8")
+    file_gif.close()
+    st.markdown(f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',unsafe_allow_html=True)
+    st.write("<p style='color:green;font-size:25px;text-align:center'>球磨机能量利用率为：<span style='color: red;font-size:25px;text-align:center'>%s</span></p>"%(round(y_pre,4)),unsafe_allow_html=True)
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        img1 = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main\pages\Ball_mill_images\密度倍数.png')
+        st.image(img1)
+        st.write("<p style='color:#00008B;font-size:15px;text-align:center'>密度倍数为：<span style='color: red;font-size:20px;text-align:center'>%s</span></p>"%(a),unsafe_allow_html=True)
+    with col2:
+        img2 = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main\pages\Ball_mill_images\球_料恢复系数.png')
+        st.image(img2)
+        st.write("<p style='color:#00008B;font-size:15px;text-align:center'>球-料恢复系数为：<span style='color: red;font-size:20px;text-align:center'>%s</span></p>"%(b),unsafe_allow_html=True)
+    with col3:
+        img3 = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main\pages\Ball_mill_images\球_球恢复系数.png')
+        st.image(img3)  
+        st.write("<p style='color:#00008B;font-size:15px;text-align:center'>球-球恢复系数为：<span style='color: red;font-size:20px;text-align:center'>%s</span></p>"%(c),unsafe_allow_html=True)
+    col4,col5,col6 = st.columns(3)
+    with col4:
+        img4 = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main\pages\Ball_mill_images\球_料摩擦系数.png')
+        st.image(img4)  
+        st.write("<p style='color:#00008B;font-size:15px;text-align:center'>球-料摩擦系数为：<span style='color: red;font-size:20px;text-align:center'>%s</span></p>"%(d),unsafe_allow_html=True)
+    with col5:
+        img5 = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main\pages\Ball_mill_images\球_球摩擦系数.png')
+        st.image(img5)  
+        st.write("<p style='color:#00008B;font-size:15px;text-align:center'>球-球摩擦系数为：<span style='color: red;font-size:20px;text-align:center'>%s</span></p>"%(e),unsafe_allow_html=True)
+    with col6:
+        img6 = mpimg.imread(r'C:\Users\Yin\Desktop\仿真结果记录\旋风分离器\Cyclone-design-optimization-main\pages\Ball_mill_images\模量倍数.png')
+        st.image(img6)  
+        st.write("<p style='color:#00008B;font-size:15px;text-align:center'>模量倍数为：<span style='color: red;font-size:20px;text-align:center'>%s</span></p>"%(f),unsafe_allow_html=True)
 
 elif choose_func == op_func[1]:
     choose_select = st.radio('请指定需要绘制拟合曲线的参数',op_select)
